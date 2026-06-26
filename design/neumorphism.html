@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CleanSpace — Soft UI / Neumorphism Mockup</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+--bg:#e8eaf0;--bgd:#c5c8d4;--bgl:#ffffff;
+--ink:#3a4056;--soft:#7e8499;--faint:#a7adc0;
+--g:#27b06a;--g2:#1f9a5d;--gbg:#d6efe2;
+--red:#e0607a;--orange:#e8a13c;--blue:#5a8de0;--pink:#d977b0;
+--rad:20px;
+--up:6px 6px 13px var(--bgd),-6px -6px 13px var(--bgl);
+--up-sm:4px 4px 9px var(--bgd),-4px -4px 9px var(--bgl);
+--in:inset 4px 4px 8px var(--bgd),inset -4px -4px 8px var(--bgl);
+--in-sm:inset 3px 3px 6px var(--bgd),inset -3px -3px 6px var(--bgl);
+}
+@media (prefers-color-scheme:dark){
+:root{
+--bg:#292c34;--bgd:#1e2027;--bgl:#343843;
+--ink:#e6e9f2;--soft:#969cad;--faint:#646a7b;
+--g:#2cc079;--g2:#46d08c;--gbg:#1d3a2b;
+--red:#e06d85;--orange:#e6a64a;--blue:#6d99e6;--pink:#df84bb;
+}
+}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);padding:36px 20px 60px;line-height:1.45;transition:background .3s}
+.head{max-width:1100px;margin:0 auto 34px;text-align:center}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g2);background:var(--bg);box-shadow:var(--up-sm);padding:8px 16px;border-radius:30px;margin-bottom:18px}
+.head h1{display:flex;align-items:center;justify-content:center;gap:14px;font-size:34px;letter-spacing:-.02em}
+.head h1 .logo{width:50px;height:50px;border-radius:16px;box-shadow:var(--up)}
+.head p{max-width:560px;margin:14px auto 0;color:var(--soft);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:22px}
+.tags span{font-size:12px;font-weight:600;color:var(--soft);background:var(--bg);box-shadow:var(--up-sm);padding:7px 13px;border-radius:30px}
+.gallery{display:flex;flex-wrap:wrap;gap:44px 38px;justify-content:center;max-width:1240px;margin:0 auto}
+.frame{display:flex;flex-direction:column;align-items:center;gap:14px}
+.phone{width:300px;height:632px;border-radius:46px;background:var(--bg);box-shadow:10px 10px 26px var(--bgd),-10px -10px 26px var(--bgl);padding:11px;position:relative}
+.phone::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:96px;height:8px;border-radius:8px;box-shadow:var(--in-sm);z-index:5}
+.screen{width:100%;height:100%;border-radius:36px;background:var(--bg);box-shadow:var(--in-sm);overflow:hidden;display:flex;flex-direction:column;position:relative}
+.sb{display:flex;justify-content:space-between;align-items:center;padding:13px 22px 4px;font-size:12px;font-weight:700;color:var(--soft);flex-shrink:0}
+.sb .r{display:flex;align-items:center;gap:6px}
+.body{flex:1;overflow:hidden;padding:6px 16px 16px;display:flex;flex-direction:column}
+.i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block}
+.cap{display:flex;flex-direction:column;align-items:center;text-align:center}
+.cap b{font-size:14px}
+.cap small{font-size:12px;color:var(--soft)}
+.bar{display:flex;align-items:center;gap:12px;padding:8px 4px 14px;flex-shrink:0}
+.bar .ttl{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.bar .sub{font-size:12px;color:var(--soft);margin-top:1px}
+.iconbtn{width:42px;height:42px;border-radius:14px;background:var(--bg);box-shadow:var(--up-sm);display:flex;align-items:center;justify-content:center;color:var(--ink);flex-shrink:0}
+.iconbtn .i{width:19px;height:19px}
+.grow{flex:1;min-width:0}
+.sec{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--faint);margin:14px 2px 9px}
+.card{background:var(--bg);box-shadow:var(--up);border-radius:var(--rad);padding:15px}
+.scroll{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:11px;padding-right:2px}
+.scroll::-webkit-scrollbar{width:0}
+.row{display:flex;align-items:center;gap:13px;background:var(--bg);box-shadow:var(--up-sm);border-radius:16px;padding:11px 13px}
+.thumb{width:42px;height:42px;border-radius:13px;background:var(--bg);box-shadow:var(--in-sm);display:flex;align-items:center;justify-content:center;color:var(--g2);flex-shrink:0}
+.thumb .i{width:20px;height:20px}
+.meta{flex:1;min-width:0}
+.meta b{font-size:13.5px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta small{font-size:11.5px;color:var(--soft)}
+.sz{font-size:13px;font-weight:700;color:var(--ink)}
+.chk{width:26px;height:26px;border-radius:9px;box-shadow:var(--in-sm);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:transparent}
+.chk.on{box-shadow:var(--up-sm);background:linear-gradient(145deg,#2cba73,#219c5e);color:#fff}
+.chk.on .i{width:15px;height:15px;stroke-width:3}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;border:none;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:700;padding:15px;border-radius:16px;background:var(--bg);color:var(--ink);box-shadow:var(--up);}
+.btn .i{width:18px;height:18px}
+.btn.primary{background:linear-gradient(145deg,#2cba73,#219c5e);color:#fff;box-shadow:5px 5px 11px var(--bgd),-5px -5px 11px var(--bgl)}
+.btn.danger{background:linear-gradient(145deg,#e56b83,#d2496a);color:#fff;box-shadow:5px 5px 11px var(--bgd),-5px -5px 11px var(--bgl)}
+.btn.ghost{color:var(--soft);font-weight:600}
+.cta{padding-top:12px;flex-shrink:0;display:flex;flex-direction:column;gap:9px}
+.note{text-align:center;font-size:12px;color:var(--soft);padding:6px}
+.seg{display:flex;background:var(--bg);box-shadow:var(--in-sm);border-radius:14px;padding:5px;gap:4px;margin-bottom:4px;flex-shrink:0}
+.seg span{flex:1;text-align:center;font-size:12.5px;font-weight:600;color:var(--soft);padding:8px 0;border-radius:10px}
+.seg span.on{background:var(--bg);box-shadow:var(--up-sm);color:var(--g2);font-weight:700}
+.selbar{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;font-weight:600;color:var(--soft);padding:2px 4px 10px;flex-shrink:0}
+.selbar a{color:var(--g2);font-weight:700;text-decoration:none}
+.callout{display:flex;gap:12px;background:var(--bg);box-shadow:var(--up-sm);border-radius:16px;padding:13px;align-items:flex-start}
+.callout .ci{width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:var(--in-sm)}
+.callout b{font-size:13px;display:block}
+.callout small{font-size:11.5px;color:var(--soft)}
+.t-g{color:var(--g)}.t-o{color:var(--orange)}.t-b{color:var(--blue)}.t-r{color:var(--red)}.t-p{color:var(--pink)}
+.ringwrap{display:flex;flex-direction:column;align-items:center;padding:6px 0 4px;flex-shrink:0}
+.ring{width:172px;height:172px;border-radius:50%;box-shadow:var(--up);display:flex;align-items:center;justify-content:center;position:relative}
+.ring::before{content:"";position:absolute;inset:13px;border-radius:50%;background:conic-gradient(var(--g) 0 78%,var(--bgd) 78% 100%);-webkit-mask:radial-gradient(circle 56px at center,transparent 98%,#000 100%);mask:radial-gradient(circle 56px at center,transparent 98%,#000 100%)}
+.ring .hole{width:120px;height:120px;border-radius:50%;box-shadow:var(--in);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ring .hole .v{font-size:27px;font-weight:800;letter-spacing:-.02em}
+.ring .hole .c{font-size:11px;color:var(--soft);margin-top:2px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;margin-top:16px;font-size:12px;color:var(--soft);font-weight:600}
+.legend span{display:flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:50%}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{background:var(--bg);box-shadow:var(--up-sm);border-radius:16px;padding:14px}
+.tile .ti{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:var(--in-sm);margin-bottom:10px}
+.tile b{font-size:13.5px;display:block}
+.tile small{font-size:11.5px;color:var(--soft)}
+.bnav{display:flex;justify-content:space-around;padding:11px 8px;background:var(--bg);box-shadow:0 -6px 14px rgba(0,0,0,.12);flex-shrink:0}
+.bnav .it{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:10.5px;font-weight:600;color:var(--faint)}
+.bnav .it .ib{width:42px;height:32px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.bnav .it.on{color:var(--g2)}
+.bnav .it.on .ib{box-shadow:var(--up-sm)}
+.bnav .it .i{width:20px;height:20px}
+.bars{display:flex;flex-direction:column;gap:13px}
+.barrow .bl{display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;margin-bottom:6px}
+.barrow .bl span:last-child{color:var(--soft)}
+.track{height:13px;border-radius:8px;box-shadow:var(--in-sm)}
+.fill{height:100%;border-radius:8px}
+.splash{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;position:relative}
+.splash .blob{width:128px;height:128px;border-radius:38px;box-shadow:var(--up);display:flex;align-items:center;justify-content:center}
+.splash .blob .logo{width:96px;height:96px;border-radius:28px}
+.splash h2{font-size:27px;letter-spacing:-.02em}
+.splash p{font-size:13px;color:var(--soft);margin-top:-12px}
+.spin{width:34px;height:34px;border-radius:50%;box-shadow:var(--in-sm);position:relative}
+.spin::after{content:"";position:absolute;inset:5px;border-radius:50%;border:3px solid var(--g);border-right-color:transparent;border-bottom-color:transparent}
+.credit{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:12.5px;font-weight:700;color:var(--soft);letter-spacing:.05em;background:var(--bg);box-shadow:var(--up-sm);padding:8px 16px;border-radius:30px;white-space:nowrap}
+.credit b{color:var(--g2);font-weight:800}
+.permlogo{width:92px;height:92px;border-radius:26px;box-shadow:var(--up);margin:8px auto 16px;display:block}
+.perm-list{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.perm-item{display:flex;gap:13px;align-items:flex-start}
+.perm-item .pi{width:42px;height:42px;border-radius:13px;box-shadow:var(--up-sm);display:flex;align-items:center;justify-content:center;color:var(--g2);flex-shrink:0}
+.perm-item b{font-size:13.5px;display:block}
+.perm-item small{font-size:12px;color:var(--soft)}
+.scanwrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.scanring{width:150px;height:150px;border-radius:50%;box-shadow:var(--up);display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:8px}
+.scanring::before{content:"";position:absolute;inset:11px;border-radius:50%;background:conic-gradient(var(--g) 0 64%,var(--bgd) 64% 100%);-webkit-mask:radial-gradient(circle 48px at center,transparent 98%,#000 100%);mask:radial-gradient(circle 48px at center,transparent 98%,#000 100%)}
+.scanring .h2{width:104px;height:104px;border-radius:50%;box-shadow:var(--in);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.scanring .h2 .v{font-size:26px;font-weight:800}
+.scanring .h2 .c{font-size:10.5px;color:var(--soft)}
+.scanlog{font-size:11px;color:var(--soft);font-family:ui-monospace,monospace;background:var(--bg);box-shadow:var(--in-sm);border-radius:10px;padding:9px 12px;width:100%;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:6px 0 4px}
+.succ{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:18px}
+.succ .ok{width:104px;height:104px;border-radius:50%;box-shadow:var(--up);display:flex;align-items:center;justify-content:center;color:var(--g);margin-bottom:18px}
+.succ .ok .i{width:50px;height:50px;stroke-width:2.4}
+.succ .big{font-size:40px;font-weight:800;letter-spacing:-.02em}
+.succ .bl2{font-size:13px;color:var(--soft);margin-top:2px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;margin:22px 0 6px}
+.stat{background:var(--bg);box-shadow:var(--up-sm);border-radius:16px;padding:14px;text-align:center}
+.stat .sl{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.06em}
+.stat .sv{font-size:22px;font-weight:800;margin-top:4px}
+.scrim{position:absolute;inset:0;background:rgba(20,22,28,.45);backdrop-filter:blur(2px)}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--bg);border-radius:28px 28px 0 0;box-shadow:0 -8px 24px rgba(0,0,0,.3);padding:10px 20px 22px;text-align:center}
+.sheet .grip{width:42px;height:5px;border-radius:5px;box-shadow:var(--in-sm);margin:4px auto 16px}
+.sheet .em{width:64px;height:64px;border-radius:50%;box-shadow:var(--up);display:flex;align-items:center;justify-content:center;color:var(--red);margin:0 auto 14px}
+.sheet .em .i{width:30px;height:30px}
+.sheet h3{font-size:18px}
+.sheet p{font-size:12.5px;color:var(--soft);margin:8px 0 18px}
+.dup{background:var(--bg);box-shadow:var(--up-sm);border-radius:16px;padding:13px}
+.dup .dh{display:flex;align-items:center;gap:7px;margin-bottom:11px}
+.dup .dh b{font-size:13px}
+.dup .dh .cnt{font-size:11.5px;color:var(--soft)}
+.dup .dh .save{margin-left:auto;font-size:11px;font-weight:700;color:var(--g2);background:var(--bg);box-shadow:var(--up-sm);padding:4px 9px;border-radius:20px}
+.thumbs{display:flex;gap:9px}
+.dt{flex:1;aspect-ratio:1;border-radius:12px;box-shadow:var(--in-sm);display:flex;align-items:center;justify-content:center;color:var(--faint);position:relative}
+.dt.keep{box-shadow:var(--up-sm);color:var(--g2)}
+.dt .kb{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);font-size:8px;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--g);padding:2px 6px;border-radius:10px;white-space:nowrap}
+.set-row{display:flex;align-items:center;gap:13px;background:var(--bg);box-shadow:var(--up-sm);border-radius:16px;padding:13px}
+.sw{width:50px;height:28px;border-radius:16px;box-shadow:var(--in-sm);position:relative;flex-shrink:0}
+.sw .kn{position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:var(--bg);box-shadow:var(--up-sm);transition:.2s}
+.sw.on{background:linear-gradient(145deg,#2cba73,#219c5e);box-shadow:var(--up-sm)}
+.sw.on .kn{left:26px;background:#fff}
+.footer{text-align:center;color:var(--faint);font-size:12px;margin:46px auto 0;max-width:600px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="logo" viewBox="0 0 512 512"><linearGradient id="lgrad" x1="60" y1="36" x2="452" y2="476" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#5BE291"/><stop offset=".52" stop-color="#28B870"/><stop offset="1" stop-color="#178A51"/></linearGradient><rect width="512" height="512" rx="116" fill="url(#lgrad)"/><path d="M150 268 L224 344 L356 186" fill="none" stroke="#fff" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/><circle cx="388" cy="150" r="19" fill="#fff"/><circle cx="432" cy="118" r="12" fill="#fff"/><circle cx="464" cy="96" r="7.5" fill="#fff"/></symbol>
+<symbol id="home" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
+<symbol id="chart" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-6"/></symbol>
+<symbol id="spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5L19 9.8 13.8 12 12 17l-1.8-5L5 9.8 10.2 8z"/></symbol>
+<symbol id="gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-2.6-1.1l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.6 1.6 0 0 0 5 15a2 2 0 1 1 0-4a1.6 1.6 0 0 0 1.1-2.6l-.1-.1A2 2 0 1 1 8.8 5.4l.1.1A1.6 1.6 0 0 0 11 5a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.6 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.6 1.6 0 0 0 21 11a2 2 0 1 1 0 4z"/></symbol>
+<symbol id="back" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+<symbol id="chev" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+<symbol id="refresh" viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></symbol>
+<symbol id="image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></symbol>
+<symbol id="video" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M10 9l5 3-5 3z"/></symbol>
+<symbol id="app" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.5 7.3L3 21l2.3-5.5A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+<symbol id="doc" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+<symbol id="copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+<symbol id="cube" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></symbol>
+<symbol id="mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 19v3"/></symbol>
+<symbol id="trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M10 11v6M14 11v6"/></symbol>
+<symbol id="shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+<symbol id="checkc" viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4L12 14l-3-3"/></symbol>
+<symbol id="info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></symbol>
+<symbol id="folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="bolt" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></symbol>
+<symbol id="batt" viewBox="0 0 24 24"><rect x="1" y="6" width="18" height="12" rx="3"/><path d="M23 10v4"/><rect x="3" y="8" width="12" height="8" rx="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="sig" viewBox="0 0 24 24"><rect x="2" y="14" width="3" height="7" rx="1" fill="currentColor" stroke="none"/><rect x="8" y="10" width="3" height="11" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="6" width="3" height="15" rx="1" fill="currentColor" stroke="none"/><rect x="20" y="2" width="3" height="19" rx="1" fill="currentColor" stroke="none"/></symbol>
+</defs></svg>
+
+<div class="head">
+<span class="eyebrow">CleanSpace • Soft UI Concept</span>
+<h1><svg class="logo"><use href="#logo"/></svg> CleanSpace</h1>
+<p>Konsep desain alternatif bertema <b>Neumorphism / Soft UI</b> — permukaan lembut, elemen timbul halus, aksen hijau brand. Auto dark/light ngikut sistem. Full set 13 layar.</p>
+<div class="tags"><span>1 Splash</span><span>2 Permission</span><span>3 Dashboard</span><span>4 Storage</span><span>5 File Besar</span><span>6 Duplikat</span><span>7 WhatsApp</span><span>8 Apps</span><span>9 Folder Tersembunyi</span><span>10 Scanning</span><span>11 Konfirmasi</span><span>12 Selesai</span><span>13 Setelan</span></div>
+</div>
+
+<div class="gallery">
+
+<!-- 1 SPLASH -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="splash"><div class="blob"><svg class="logo"><use href="#logo"/></svg></div><div style="text-align:center"><h2>CleanSpace</h2><p>Ruang lega, hati lega.</p></div><div class="spin"></div><div class="credit">by <b>JagresTech</b></div></div></div>
+</div></div><div class="cap"><b>1 — Splash</b><small>Pembuka + credit JagresTech</small></div></div>
+
+<!-- 2 PERMISSION -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><svg class="permlogo"><use href="#logo"/></svg><h3 style="text-align:center;font-size:20px">Izin akses media</h3><p style="text-align:center;font-size:12.5px;color:var(--soft);margin:6px 12px 0">CleanSpace butuh akses buat memindai foto, video &amp; file di perangkat kamu.</p>
+<div class="perm-list">
+<div class="perm-item"><span class="pi"><svg class="i"><use href="#shield"/></svg></span><div><b>Privasi dulu</b><small>Semua pindai jalan di HP — nggak ada data dikirim ke server.</small></div></div>
+<div class="perm-item"><span class="pi"><svg class="i"><use href="#image"/></svg></span><div><b>Foto &amp; Video</b><small>Buat cari duplikat, screenshot &amp; file besar.</small></div></div>
+<div class="perm-item"><span class="pi"><svg class="i"><use href="#trash"/></svg></span><div><b>Kontrol penuh</b><small>Kamu yang pilih &amp; konfirmasi sebelum hapus.</small></div></div>
+</div>
+<div class="cta" style="margin-top:auto"><button class="btn primary">Izinkan akses</button><div class="note">Nanti aja</div></div></div>
+</div></div><div class="cap"><b>2 — Permission</b><small>Onboarding &amp; izin</small></div></div>
+
+<!-- 3 DASHBOARD -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="bar" style="padding:8px 16px 6px"><svg style="width:40px;height:40px;border-radius:13px;box-shadow:var(--up-sm)"><use href="#logo"/></svg><div class="grow"><div class="ttl" style="font-size:17px">CleanSpace</div><div class="sub">iQOO • 128 GB</div></div><span class="iconbtn"><svg class="i"><use href="#refresh"/></svg></span></div>
+<div class="body" style="overflow-y:auto;padding-top:0">
+<div class="ringwrap"><div class="ring"><div class="hole"><div class="v">100,4 GB</div><div class="c">dari 128 GB • 78%</div></div></div>
+<div class="legend"><span><span class="dot" style="background:var(--pink)"></span>Foto 38</span><span><span class="dot" style="background:var(--orange)"></span>Video 22</span><span><span class="dot" style="background:var(--blue)"></span>Apps 19</span><span><span class="dot" style="background:var(--g)"></span>Lain 10</span></div></div>
+<div class="callout" style="margin:14px 0 4px"><span class="ci t-o"><svg class="i"><use href="#bolt"/></svg></span><div><b>Bisa dikosongin ~12,6 GB</b><small>Dari duplikat, file besar &amp; media WhatsApp.</small></div></div>
+<button class="btn" style="margin:12px 0 2px"><svg class="i t-g"><use href="#refresh"/></svg>Pindai ulang</button>
+<div class="sec">Pembersih</div>
+<div class="tiles">
+<div class="tile"><div class="ti t-b"><svg class="i"><use href="#chart"/></svg></div><b>Storage</b><small>Breakdown lengkap</small></div>
+<div class="tile"><div class="ti t-o"><svg class="i"><use href="#cube"/></svg></div><b>File Besar</b><small>4,8 GB</small></div>
+<div class="tile"><div class="ti t-r"><svg class="i"><use href="#copy"/></svg></div><b>Duplikat</b><small>312 • 3,1 GB</small></div>
+<div class="tile"><div class="ti t-g"><svg class="i"><use href="#wa"/></svg></div><b>WhatsApp</b><small>4,7 GB</small></div>
+</div></div>
+<div class="bnav"><div class="it on"><span class="ib"><svg class="i"><use href="#home"/></svg></span>Home</div><div class="it"><span class="ib"><svg class="i"><use href="#chart"/></svg></span>Storage</div><div class="it"><span class="ib"><svg class="i"><use href="#spark"/></svg></span>Clean</div><div class="it"><span class="ib"><svg class="i"><use href="#gear"/></svg></span>Setelan</div></div>
+</div></div><div class="cap"><b>3 — Dashboard</b><small>Ring storage + rekomendasi</small></div></div>
+
+<!-- 4 STORAGE -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">Storage Overview</div></div><span class="iconbtn"><svg class="i"><use href="#refresh"/></svg></span></div>
+<div class="sec" style="margin-top:0">Pakai per kategori</div>
+<div class="card bars">
+<div class="barrow"><div class="bl"><span>Foto</span><span>38 GB</span></div><div class="track"><div class="fill" style="width:90%;background:var(--pink)"></div></div></div>
+<div class="barrow"><div class="bl"><span>Video</span><span>22 GB</span></div><div class="track"><div class="fill" style="width:55%;background:var(--orange)"></div></div></div>
+<div class="barrow"><div class="bl"><span>Apps</span><span>19 GB</span></div><div class="track"><div class="fill" style="width:47%;background:var(--blue)"></div></div></div>
+<div class="barrow"><div class="bl"><span>WhatsApp</span><span>11 GB</span></div><div class="track"><div class="fill" style="width:27%;background:var(--g)"></div></div></div>
+<div class="barrow"><div class="bl"><span>Dokumen</span><span>7 GB</span></div><div class="track"><div class="fill" style="width:18%;background:var(--faint)"></div></div></div>
+</div>
+<div class="sec">Bisa dibersihkan</div>
+<div class="scroll" style="flex:0">
+<div class="row"><span class="thumb t-r"><svg class="i"><use href="#copy"/></svg></span><div class="meta"><b>File duplikat</b><small>312 item</small></div><span class="sz">3,1 GB</span></div>
+<div class="row"><span class="thumb t-p"><svg class="i"><use href="#image"/></svg></span><div class="meta"><b>Screenshot lama</b><small>540 item</small></div><span class="sz">1,2 GB</span></div>
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#trash"/></svg></span><div class="meta"><b>Cache &amp; sampah</b><small>Aman dihapus</small></div><span class="sz">820 MB</span></div>
+</div></div>
+</div></div><div class="cap"><b>4 — Storage Overview</b><small>Breakdown per kategori</small></div></div>
+
+<!-- 5 LARGEST -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">File Terbesar</div><div class="sub">3 dipilih • 2,4 GB</div></div></div>
+<div class="seg"><span class="on">Semua</span><span>Video</span><span>Foto</span><span>Apps</span></div>
+<div class="selbar"><span>Pilih semua (124)</span><a>Batalkan semua</a></div>
+<div class="scroll">
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#video"/></svg></span><div class="meta"><b>VID_20250612_party.mp4</b><small>Video • 12 Jun</small></div><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#video"/></svg></span><div class="meta"><b>Rekaman layar 04.mp4</b><small>Video • 3 Jun</small></div><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-b"><svg class="i"><use href="#cube"/></svg></span><div class="meta"><b>game-update.obb</b><small>Data app • 28 Mei</small></div><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#video"/></svg></span><div class="meta"><b>VID_trip_bali.mov</b><small>Video • 20 Mei</small></div><span class="chk"></span></div>
+<div class="row"><span class="thumb t-p"><svg class="i"><use href="#image"/></svg></span><div class="meta"><b>panorama_raw.png</b><small>Foto • 14 Mei</small></div><span class="chk"></span></div>
+<div class="row"><span class="thumb"><svg class="i"><use href="#doc"/></svg></span><div class="meta"><b>backup-2024.zip</b><small>Arsip • 2 Mei</small></div><span class="chk"></span></div>
+</div>
+<div class="cta"><button class="btn danger"><svg class="i"><use href="#trash"/></svg>Hapus 3 file • 2,4 GB</button></div></div>
+</div></div><div class="cap"><b>5 — File Besar</b><small>List + multi-select</small></div></div>
+
+<!-- 6 DUPLICATE -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">Duplikat</div><div class="sub">14 grup • hemat 3,1 GB</div></div></div>
+<div class="callout" style="margin-bottom:6px"><span class="ci t-g"><svg class="i"><use href="#spark"/></svg></span><div><b>Pilih cerdas aktif</b><small>Versi terbaik &amp; resolusi tertinggi otomatis dipertahankan.</small></div></div>
+<div class="scroll">
+<div class="dup"><div class="dh"><b>Foto liburan</b><span class="cnt">• 4 sama</span><span class="save">hemat 18 MB</span></div><div class="thumbs"><div class="dt keep"><svg class="i"><use href="#image"/></svg><span class="kb">SIMPAN</span></div><div class="dt"><svg class="i"><use href="#image"/></svg></div><div class="dt"><svg class="i"><use href="#image"/></svg></div><div class="dt"><svg class="i"><use href="#image"/></svg></div></div></div>
+<div class="dup"><div class="dh"><b>Screenshot chat</b><span class="cnt">• 3 sama</span><span class="save">hemat 9 MB</span></div><div class="thumbs"><div class="dt keep"><svg class="i"><use href="#app"/></svg><span class="kb">SIMPAN</span></div><div class="dt"><svg class="i"><use href="#app"/></svg></div><div class="dt"><svg class="i"><use href="#app"/></svg></div></div></div>
+<div class="dup"><div class="dh"><b>Meme grup</b><span class="cnt">• 5 sama</span><span class="save">hemat 24 MB</span></div><div class="thumbs"><div class="dt keep"><svg class="i"><use href="#image"/></svg><span class="kb">SIMPAN</span></div><div class="dt"><svg class="i"><use href="#image"/></svg></div><div class="dt"><svg class="i"><use href="#image"/></svg></div><div class="dt"><svg class="i"><use href="#image"/></svg></div></div></div>
+</div>
+<div class="cta"><button class="btn primary">Bersihkan 298 duplikat • 3,1 GB</button></div></div>
+</div></div><div class="cap"><b>6 — Duplicate Finder</b><small>Grup + auto-keep terbaik</small></div></div>
+
+<!-- 7 WHATSAPP -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">WhatsApp Cleaner</div><div class="sub">Total 4,7 GB</div></div></div>
+<div class="selbar"><span>Pilih semua</span><a>Batalkan semua</a></div>
+<div class="scroll">
+<div class="row"><span class="thumb t-p"><svg class="i"><use href="#image"/></svg></span><div class="meta"><b>Images</b><small>3.204 file</small></div><span class="sz" style="margin-right:8px">1,9 GB</span><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#video"/></svg></span><div class="meta"><b>Videos</b><small>412 file</small></div><span class="sz" style="margin-right:8px">2,1 GB</span><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-b"><svg class="i"><use href="#mic"/></svg></span><div class="meta"><b>Voice notes</b><small>880 file</small></div><span class="sz" style="margin-right:8px">240 MB</span><span class="chk"></span></div>
+<div class="row"><span class="thumb t-g"><svg class="i"><use href="#spark"/></svg></span><div class="meta"><b>Stickers &amp; GIF</b><small>1.530 file</small></div><span class="sz" style="margin-right:8px">180 MB</span><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb"><svg class="i"><use href="#doc"/></svg></span><div class="meta"><b>Documents</b><small>96 file</small></div><span class="sz" style="margin-right:8px">320 MB</span><span class="chk"></span></div>
+</div>
+<div class="callout" style="margin-top:10px"><span class="ci t-b"><svg class="i"><use href="#info"/></svg></span><div><b>Aman</b><small>Chat &amp; dokumen penting nggak ikut kehapus.</small></div></div>
+<div class="cta"><button class="btn danger"><svg class="i"><use href="#trash"/></svg>Bersihkan terpilih • 4,2 GB</button></div></div>
+</div></div><div class="cap"><b>7 — WhatsApp Cleaner</b><small>Per tipe media</small></div></div>
+
+<!-- 8 APP MANAGER -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">App Manager</div><div class="sub">86 aplikasi • 19 GB</div></div><span class="iconbtn"><svg class="i"><use href="#search"/></svg></span></div>
+<div class="seg"><span class="on">Ukuran</span><span>Jarang dipakai</span><span>Nama</span></div>
+<div class="scroll">
+<div class="row"><span class="thumb t-b"><svg class="i"><use href="#app"/></svg></span><div class="meta"><b>Mobile Legends</b><small>Terakhir buka 2 hari lalu</small></div><span class="sz">4,2 GB</span></div>
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#app"/></svg></span><div class="meta"><b>Capcut</b><small>Terakhir buka 5 hari lalu</small></div><span class="sz">2,8 GB</span></div>
+<div class="row"><span class="thumb t-r"><svg class="i"><use href="#app"/></svg></span><div class="meta"><b>Game Lama</b><small>Nggak dibuka 3 bulan</small></div><span class="sz">1,9 GB</span></div>
+<div class="row"><span class="thumb t-g"><svg class="i"><use href="#app"/></svg></span><div class="meta"><b>Shopee</b><small>Terakhir buka kemarin</small></div><span class="sz">1,1 GB</span></div>
+<div class="row"><span class="thumb t-p"><svg class="i"><use href="#app"/></svg></span><div class="meta"><b>Instagram</b><small>Terakhir buka hari ini</small></div><span class="sz">980 MB</span></div>
+</div>
+<div class="callout" style="margin-top:10px"><span class="ci t-o"><svg class="i"><use href="#bolt"/></svg></span><div><b>3 app jarang dipakai</b><small>Bisa hemat ~6,1 GB kalau di-uninstall.</small></div></div></div>
+</div></div><div class="cap"><b>8 — App Manager</b><small>App by ukuran &amp; aktivitas</small></div></div>
+
+<!-- 9 HIDDEN FOLDERS -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">Folder Tersembunyi</div><div class="sub">8 folder • 2,3 GB</div></div></div>
+<div class="callout" style="margin-bottom:6px"><span class="ci t-b"><svg class="i"><use href="#eye"/></svg></span><div><b>Folder cache &amp; .nomedia</b><small>Sisa file app yang nggak kelihatan di galeri.</small></div></div>
+<div class="selbar"><span>Pilih semua (8)</span><a>Batalkan semua</a></div>
+<div class="scroll">
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#folder"/></svg></span><div class="meta"><b>.thumbnails</b><small>/DCIM/.thumbnails</small></div><span class="sz" style="margin-right:8px">740 MB</span><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-b"><svg class="i"><use href="#folder"/></svg></span><div class="meta"><b>.Telegram cache</b><small>/Telegram/.cache</small></div><span class="sz" style="margin-right:8px">610 MB</span><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-p"><svg class="i"><use href="#folder"/></svg></span><div class="meta"><b>.trashed-media</b><small>/Pictures/.trashed</small></div><span class="sz" style="margin-right:8px">420 MB</span><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb"><svg class="i"><use href="#folder"/></svg></span><div class="meta"><b>.estrongs</b><small>/.estrongs</small></div><span class="sz" style="margin-right:8px">300 MB</span><span class="chk"></span></div>
+<div class="row"><span class="thumb"><svg class="i"><use href="#folder"/></svg></span><div class="meta"><b>.tmp</b><small>/Android/.tmp</small></div><span class="sz" style="margin-right:8px">230 MB</span><span class="chk"></span></div>
+</div>
+<div class="cta"><button class="btn danger"><svg class="i"><use href="#trash"/></svg>Hapus terpilih • 1,7 GB</button></div></div>
+</div></div><div class="cap"><b>9 — Folder Tersembunyi</b><small>Cache &amp; folder .nomedia</small></div></div>
+
+<!-- 10 SCANNING -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">Memindai…</div></div></div>
+<div class="scanwrap">
+<div class="scanring"><div class="h2"><div class="v">64%</div><div class="c">8.420 / 13.100</div></div></div>
+<div class="scanlog">/DCIM/Camera/IMG_20250620_1845.jpg</div>
+<div style="width:100%;margin-top:8px"><div class="sec" style="margin-top:0">Ditemukan sejauh ini</div>
+<div class="scroll" style="flex:0;gap:11px">
+<div class="row"><span class="thumb t-r"><svg class="i"><use href="#copy"/></svg></span><div class="meta"><b>Duplikat</b><small>208 file</small></div><span class="sz">2,2 GB</span></div>
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#cube"/></svg></span><div class="meta"><b>File besar</b><small>17 file</small></div><span class="sz">3,9 GB</span></div>
+</div></div></div>
+<div class="cta"><button class="btn ghost">Batalkan</button></div></div>
+</div></div><div class="cap"><b>10 — Scanning</b><small>Progres real-time</small></div></div>
+
+<!-- 11 CONFIRM -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">Duplikat</div><div class="sub">298 dipilih • 3,1 GB</div></div></div>
+<div class="scroll">
+<div class="row"><span class="thumb t-p"><svg class="i"><use href="#image"/></svg></span><div class="meta"><b>Foto liburan (3)</b><small>hemat 18 MB</small></div><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-b"><svg class="i"><use href="#app"/></svg></span><div class="meta"><b>Screenshot chat (2)</b><small>hemat 9 MB</small></div><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+<div class="row"><span class="thumb t-g"><svg class="i"><use href="#image"/></svg></span><div class="meta"><b>Meme grup (4)</b><small>hemat 24 MB</small></div><span class="chk on"><svg class="i"><use href="#check"/></svg></span></div>
+</div></div>
+<div class="scrim"></div>
+<div class="sheet"><div class="grip"></div><div class="em"><svg class="i"><use href="#trash"/></svg></div><h3>Hapus 298 file?</h3><p>Mengosongkan <b>3,1 GB</b>. File media dipindah ke Trash dulu — bisa dipulihkan 30 hari.</p><button class="btn danger" style="margin-bottom:9px">Ya, hapus 298 file</button><button class="btn ghost">Batal</button></div>
+</div></div><div class="cap"><b>11 — Konfirmasi Hapus</b><small>Bottom sheet + safety net</small></div></div>
+
+<!-- 12 SUCCESS -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="succ"><div class="ok"><svg class="i"><use href="#checkc"/></svg></div><div class="big">3,1 GB</div><div class="bl2">berhasil dikosongkan</div>
+<div class="stats"><div class="stat"><div class="sl">File dihapus</div><div class="sv">298</div></div><div class="stat"><div class="sl">Sisa ruang</div><div class="sv">30,7<span style="font-size:14px"> GB</span></div></div></div>
+<div class="sec" style="align-self:flex-start">Lanjut bersihin?</div>
+<div style="width:100%;display:flex;flex-direction:column;gap:11px">
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#cube"/></svg></span><div class="meta"><b>File besar</b><small>4,8 GB bisa dikosongkan</small></div><span class="iconbtn" style="width:30px;height:30px"><svg class="i" style="width:16px;height:16px"><use href="#chev"/></svg></span></div>
+<div class="row"><span class="thumb t-g"><svg class="i"><use href="#wa"/></svg></span><div class="meta"><b>Media WhatsApp</b><small>4,7 GB</small></div><span class="iconbtn" style="width:30px;height:30px"><svg class="i" style="width:16px;height:16px"><use href="#chev"/></svg></span></div>
+</div></div>
+<div class="cta"><button class="btn primary">Selesai</button></div></div>
+</div></div><div class="cap"><b>12 — Selesai</b><small>Hasil + next steps</small></div></div>
+
+<!-- 13 SETTINGS -->
+<div class="frame"><div class="phone"><div class="screen">
+<div class="sb"><span>9:41</span><span class="r"><svg class="i" style="width:15px;height:15px"><use href="#sig"/></svg><svg class="i" style="width:20px;height:13px"><use href="#batt"/></svg>86%</span></div>
+<div class="body"><div class="bar"><span class="iconbtn"><svg class="i"><use href="#back"/></svg></span><div class="grow"><div class="ttl">Setelan</div></div></div>
+<div class="sec" style="margin-top:0">Umum</div>
+<div class="scroll" style="flex:0">
+<div class="set-row"><span class="thumb t-g"><svg class="i"><use href="#shield"/></svg></span><div class="meta"><b>Trash 30 hari</b><small>Tahan file sebelum permanen</small></div><span class="sw on"><span class="kn"></span></span></div>
+<div class="set-row"><span class="thumb t-b"><svg class="i"><use href="#bolt"/></svg></span><div class="meta"><b>Pindai otomatis</b><small>Tiap minggu di latar</small></div><span class="sw on"><span class="kn"></span></span></div>
+<div class="set-row"><span class="thumb t-o"><svg class="i"><use href="#eye"/></svg></span><div class="meta"><b>Tampilkan file tersembunyi</b><small>Folder diawali titik</small></div><span class="sw"><span class="kn"></span></span></div>
+</div>
+<div class="sec">Tentang</div>
+<div class="scroll" style="flex:0">
+<div class="row"><span class="thumb t-g"><svg class="i"><use href="#info"/></svg></span><div class="meta"><b>Versi</b><small>CleanSpace 1.0.0</small></div></div>
+<div class="row"><span class="thumb t-b"><svg class="i"><use href="#shield"/></svg></span><div class="meta"><b>Kebijakan Privasi</b><small>Data kamu tetap di HP</small></div><span class="iconbtn" style="width:30px;height:30px"><svg class="i" style="width:16px;height:16px"><use href="#chev"/></svg></span></div>
+<div class="row"><span class="thumb t-o"><svg class="i"><use href="#spark"/></svg></span><div class="meta"><b>Dibuat oleh</b><small>JagresTech</small></div></div>
+</div></div>
+</div></div><div class="cap"><b>13 — Setelan</b><small>Toggle &amp; tentang</small></div></div>
+
+</div>
+<p class="footer">CleanSpace — Soft UI / Neumorphism concept • 13 layar • auto dark/light • by JagresTech</p>
+</body>
+</html>
